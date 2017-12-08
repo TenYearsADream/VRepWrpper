@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF9BF2BC-87A1-4A15-88B2-98BAA68ABA65}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VREPRemoteAPI</RootNamespace>
+    <AssemblyName>VREPRemoteAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\..\Program Files %28x86%29\V-REP3\V-REP_PRO_EDU\programming\remoteApiSharedLib\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\SimXCmdHeaderOffset.cs" />
+    <Compile Include="Enums\SimXError.cs" />
+    <Compile Include="Enums\SimXHeaderOffset.cs" />
+    <Compile Include="Enums\SimXOpMode.cs" />
+    <Compile Include="Enums\SimAPI.cs" />
+    <Compile Include="Enums\SimAppObj.cs" />
+    <Compile Include="Enums\SimArrayParam.cs" />
+    <Compile Include="Enums\SimBanner.cs" />
+    <Compile Include="Enums\SimBoolParam.cs" />
+    <Compile Include="Enums\SimButtonProperty.cs" />
+    <Compile Include="Enums\SimDistCalcMethod.cs" />
+    <Compile Include="Enums\SimDlgReturn.cs" />
+    <Compile Include="Enums\SimDlgStyle.cs" />
+    <Compile Include="Enums\SimDrawing.cs" />
+    <Compile Include="Enums\SimFloatParam.cs" />
+    <Compile Include="Enums\SimGUI.cs" />
+    <Compile Include="Enums\SimIK.cs" />
+    <Compile Include="Enums\SimIKResult.cs" />
+    <Compile Include="Enums\SimIntParam.cs" />
+    <Compile Include="Enums\SimJoint.cs" />
+    <Compile Include="Enums\SimJointMode.cs" />
+    <Compile Include="Enums\SimLight.cs" />
+    <Compile Include="Enums\SimLua.cs" />
+    <Compile Include="Enums\SimMessage.cs" />
+    <Compile Include="Enums\SimMill.cs" />
+    <Compile Include="Enums\SimModelProperty.cs" />
+    <Compile Include="Enums\SimNavigation.cs" />
+    <Compile Include="Enums\SimObject.cs" />
+    <Compile Include="Enums\SimObjectProperty.cs" />
+    <Compile Include="Enums\SimObjectSpecialProperty.cs" />
+    <Compile Include="Enums\SimParticle.cs" />
+    <Compile Include="Enums\SimPathProperty.cs" />
+    <Compile Include="Enums\SimProximitySensor.cs" />
+    <Compile Include="Enums\SimScript.cs" />
+    <Compile Include="Enums\SimScriptType.cs" />
+    <Compile Include="Enums\SimShape.cs" />
+    <Compile Include="Enums\SimSimulation.cs" />
+    <Compile Include="Enums\SimStringParam.cs" />
+    <Compile Include="Enums\SimUI.cs" />
+    <Compile Include="VREPHelper.cs" />
+    <Compile Include="VREPSetBlock.cs" />
+    <Compile Include="VREPWrapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="remoteApi.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
